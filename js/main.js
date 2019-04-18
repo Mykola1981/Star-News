@@ -15,6 +15,30 @@ function Init() {
     NewsRequest(category[i], apiKey, callbackFunction[i].news);
   }
     CurrencyRequest();
+
+  var weatherAPIKey = "d663677633bd6cb690bbdea66fe5a981";
+  var city = "Rivne";
+  WeatherRequest(city, weatherAPIKey, RenderWeather);
+}
+
+function WeatherRequest(city, weatherAPIKey, callback) {
+  var url = `http://api.openweathermap.org/data/2.5/forecast?id=7046809&APPID=${weatherAPIKey}`;
+  http: https: var xhr = new XMLHttpRequest();
+  xhr.open("GET", url, true);
+  xhr.send();
+
+  xhr.onreadystatechange = function() {
+    if (xhr.readyState != 4) return;
+
+    if (xhr.status != 200) {
+      var errStatus = xhr.status;
+      var errText = xhr.statusText;
+      console.log(errStatus + ": " + errText);
+    } else {
+      var data = JSON.parse(xhr.responseText);
+      callback(data);
+    }
+  }
 }
 
 function NewsRequest(category, apiKey, callback) {
@@ -35,6 +59,34 @@ function NewsRequest(category, apiKey, callback) {
       var data = JSON.parse(xhr.responseText);
       callback(data);
     }
+  }
+}
+
+function RenderWeather(weather){
+  console.log(weather);
+  var weatherElement = document.querySelector("#weather");
+  for (var i = 0; i < 5; i++) {
+  
+  var weatherDiv = document.createElement("div");
+  weatherDiv.className = "weather";
+  
+  var city = document.createElement("div");
+  city.className = "city";
+  city.innerHTML = `${weather.city.name} ${weather.city.country}`;
+  
+  var weatherBody = document.createElement("div");
+  weatherBody.className = "weatherList";
+  weatherBody.innerHTML = `${weather.list[i].dt.txt} ${weather.list[i].weather[0].description} ${weather.list[1].weather[0].icon}`;
+
+  var weatherTemp = document.createElement("div");
+  weatherTemp.className = "weatherTemp ";
+  weatherTemp.innerHTML = `${weather.list[0].main.temp}`;
+
+  weatherElement.appendChild(weatherDiv);
+  weatherDiv.appendChild(city);
+  weatherDiv.appendChild(weatherBody);
+  weatherDiv.appendChild(weatherTemp);
+
   }
 }
 
