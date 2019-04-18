@@ -1,5 +1,5 @@
 body {
-    background: white;
+    background: whitesmoke;
 }
 
 .header-top {
@@ -27,12 +27,10 @@ body {
     padding: 0;
 }
 
-
 .main-nav li a {
     color: #28a745;
     font-weight: bold;
     text-decoration: none;
-
 }
 
 .main-nav li {
@@ -66,7 +64,6 @@ body {
 
 .mainBody {
     background: transparent;
-    /*border: 1px solid #28a745;*/
     border-radius: 10px;
     margin-bottom: 15px;
 }
@@ -139,12 +136,11 @@ body {
     display: flex;
     justify-content: space-between;
     margin-top: 15px;
-    height: 350px;
     line-height: 30px;
 }
 
 .label {
-    color: #EEE2DC;
+    color: salmon;
     display: flex;
     justify-content: center;
     padding-top: 10px;
@@ -199,26 +195,50 @@ body {
 }
 
 .sport_news {
-    color: #EAE7DC;
-
+    color: saddlebrown;
 }
 
 .entertainment_news {
     color: #EAE7DC;
-
 }
 
 .science_news {
     color: #EAE7DC;
-
 }
 
 .business_news {
     color: #EAE7DC;
-
 }
 
 .technology_news {
     color: #EAE7DC;
+}
 
+.health_news{
+    color: #EAE7DC;
+}
+
+h3 {
+    color: black;
+    font-size: 16px;
+}
+
+.newsImg {
+    width: 100%;
+    height: auto;
+}
+
+.news_description {
+    color: white;
+    font-size: 12px;
+}
+
+.news_author {
+    display: inline-block;
+    color: white;
+}
+
+.news_publishedAt {
+    display: inline-block;
+    color: white;
 }
