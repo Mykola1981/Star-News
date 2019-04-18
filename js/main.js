@@ -12,6 +12,7 @@ function Init() {
   ];
 
   for (var i = 0; i < category.length; i++) {
+
     NewsRequest(category[i], apiKey, callbackFunction[i].news);
   }
     CurrencyRequest();
@@ -41,6 +42,7 @@ function NewsRequest(category, apiKey, callback) {
 function sportsNews(news) {
   var sportElem = document.querySelector("#sport");
   for (var i = 0; i < 5; i ++){
+
     var h3 = document.createElement('h3');
     h3.className = "newsTitle";
     h3.innerHTML = news.articles[i].title;
@@ -72,6 +74,7 @@ function sportsNews(news) {
 function entertainmentNews(news) {
   var entertainmentElem = document.querySelector("#entertainment");
   for (var i = 0; i < 5; i++) {
+
     var h3 = document.createElement('h3');
     h3.className = "newsTitle";
     h3.innerHTML = news.articles[i].title;
@@ -103,6 +106,7 @@ function entertainmentNews(news) {
 function scienceNews(news) {
   var scienceElem = document.querySelector("#science");
   for (var i = 0; i < 5; i++) {
+
     var h3 = document.createElement('h3');
     h3.className = "newsTitle";
     h3.innerHTML = news.articles[i].title;
@@ -134,6 +138,7 @@ function scienceNews(news) {
 function healthNews(news) {
   var healthElem = document.querySelector("#health");
   for (var i = 0; i < 5; i++) {
+
     var h3 = document.createElement('h3');
     h3.className = "newsTitle";
     h3.innerHTML = news.articles[i].title;
@@ -165,6 +170,7 @@ function healthNews(news) {
 function technologyNews(news) {
   var technologyElem = document.querySelector("#technology");
   for (var i = 0; i < 5; i++) {
+
     var h3 = document.createElement('h3');
     h3.className = "newsTitle";
     h3.innerHTML = news.articles[i].title;
@@ -214,6 +220,7 @@ function CurrencyRequest() {
 
 function ShowCurrency(data) {
   for (var i = 0; i < data.length; i++) {
+    
     var result1 = document.querySelector(".result1");
     var ccy = document.createElement("p");
     ccy.className = "ccy";
